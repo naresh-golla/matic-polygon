@@ -121,6 +121,18 @@ const Page = (props) => {
         gradient={gradient}
       />
       <div className="pt-24">{content}</div>
+      <style jsx>
+        {
+          `
+          ul .list-reset{
+            color:white !important;
+          }
+          nav{
+            color: #0a1647 !important
+          }
+          `
+        }
+      </style>
     </Layout>
   );
 };

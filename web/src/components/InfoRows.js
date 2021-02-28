@@ -19,7 +19,7 @@ const maybeImage = illustration => {
     );
 
     img = (
-      <img className="w-full sm:h-64 mx-auto" src={fluidProps.src} alt={illustration.image.alt} />
+      <img className="" style={{width:"100%", height:"100"}} src={fluidProps.src} alt={illustration.image.alt} />
     );
   }
   return img;

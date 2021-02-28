@@ -1,7 +1,7 @@
 import React from "react";
 
 export const TopWave = () => (
-  <div className="relative -mt-12 lg:-mt-24">
+  <div className="relative -mt-12 lg:-mt-24" style={{marginTop:"-2rem"}}>
     <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg">
       <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
         <g transform="translate(-2.000000, 44.000000)" fill="#FFFFFF" fillRule="nonzero">

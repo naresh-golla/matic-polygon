@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
+
 blockquote {
   font-family: monospace;
   margin: 2em;
@@ -13,19 +13,23 @@ ul {
   margin: 1.2em;
 }
 
+footer ul{
+  margin-left: 0px;
+}
+
 ol {
   list-style: decimal;
 }
 
-a {
+/* a {
   text-decoration: underline;
   text-decoration-color: cornflowerblue;
   color: cornflowerblue;
-}
+} */
 
-ul {
+/* ul {
   list-style: circle;
-}
+} */
 
 h3 {
   font-size: 1.35rem;
@@ -42,4 +46,29 @@ h1 {
   font-weight: 900;
 }
 
-*/
+
+
+@media only screen and (max-width:1024px){
+  #nav-content{
+    display: block !important;
+  }
+  .justify-end {
+    justify-content: flex-start;
+  }
+  /* .container{
+    padding-top: 35px;
+  } */
+  .fixed {
+    position: static;
+  }
+  nav + div.pt-24 {
+    padding-top: 0rem;
+  }
+  .p-4 {
+    padding: 0rem;
+  }
+
+  .mt-2 {
+    margin-top: 0rem;
+  }
+}
