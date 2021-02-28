@@ -65,7 +65,7 @@ const Header = ({ showNav, siteTitle, scrolled, navMenuItems = [], textWhite = t
         <div className="pl-4 flex items-center">
           <Link id="siteTitle" className={titleClass} to="/">
             <div style={{display:"flex",alignItems:"center"}}>
-            <img src="/polygon_logo.png" height="60" width="60"/>
+            <img src="polygon_logo.png" height="60" width="60"/>
             <span>{siteTitle}</span>
             </div>
           </Link>
