@@ -10,6 +10,21 @@ const isProd = process.env.NODE_ENV === "production";
 
 module.exports = {
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-HL1S85FMGR" 
+        ],
+        gtagConfig: {
+          // anonymize_ip: true,
+          cookie_expires: 0,
+        },
+        pluginConfig: {
+          head: true,
+        },
+      },
+    },
     "gatsby-plugin-postcss",
     "gatsby-plugin-react-helmet",
     {
@@ -29,14 +44,6 @@ module.exports = {
         watchMode: !isProd,
         overlayDrafts: !isProd
       }
-    },
-    {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        trackingIds: [
-          "G-HL1S85FMGR" 
-        ],
-      },
-    },
+    }
   ]
 };
