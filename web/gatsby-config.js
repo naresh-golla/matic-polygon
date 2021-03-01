@@ -29,6 +29,14 @@ module.exports = {
         watchMode: !isProd,
         overlayDrafts: !isProd
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-HL1S85FMGR" 
+        ],
+      },
+    },
   ]
 };
