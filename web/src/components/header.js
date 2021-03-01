@@ -21,12 +21,12 @@ function useInterval(fn,delay){
 const Request = ()=>{
   let [data , setData] = useState(0);
   useEffect(()=>{
-    fetch("https://api.wazirx.com/api/v2/tickers",{
+    fetch("https://nitinr-cors.herokuapp.com/https://api.wazirx.com/api/v2/tickers/maticinr",{
     })
     .then(res=>res.json())
     .then(data=>{
-      console.log(data.maticinr.last)
-      setData(data.maticinr.last) 
+      console.log(data.ticker.last)
+      setData(data.ticker.last) 
     })
   },[])
   const delay = 5000;
