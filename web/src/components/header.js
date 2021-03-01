@@ -31,17 +31,27 @@ const Request = ()=>{
   },[])
   const delay = 5000;
   useInterval(()=>{
-    fetch("https://api.wazirx.com/api/v2/tickers",{
+    fetch("https://nitinr-cors.herokuapp.com/https://api.wazirx.com/api/v2/tickers/maticinr",{
     })
     .then(res=>res.json())
     .then(data=>{
-      console.log(data.maticinr.last)
-      setData(data.maticinr.last) 
+      console.log(data.ticker.last)
+      setData(data.ticker.last) 
     })
   },[delay])
 
   return data
 }
+// useEffect(() => {
+//   async function getDogecoinPrice() {
+//     const { data } = await axios.get(
+//       'https://nitinr-cors.herokuapp.com/https://api.wazirx.com/api/v2/tickers/dogeusdt'
+//     );
+//     setTicker(data.ticker);
+//   }
+//   getDogecoinPrice();
+//   setInterval(() => getDogecoinPrice(), 10000);
+// }, []);
 
 const Header = ({ showNav, siteTitle, scrolled, navMenuItems = [], textWhite = true }) => {
 
@@ -65,7 +75,7 @@ const Header = ({ showNav, siteTitle, scrolled, navMenuItems = [], textWhite = t
         <div className="pl-4 flex items-center">
           <Link id="siteTitle" className={titleClass} to="/">
             <div style={{display:"flex",alignItems:"center"}}>
-            <img src="polygon_logo.png" height="60" width="60"/>
+            <img src="https://cdn.sanity.io/images/pbft8nsp/production/df94f40876875ad59ce6672508d6d7fdf70327d8-38x34.svg" height="60" width="60"/>
             <span>{siteTitle}</span>
             </div>
           </Link>
