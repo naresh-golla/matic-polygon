@@ -1,6 +1,7 @@
 import { Link } from "gatsby";
 import React,{ useState, useEffect, useRef } from "react";
 import CTALink from "./CTALink";
+import axios from "axios";
 
 function useInterval(fn,delay){
   const savedFn = useRef;
@@ -20,38 +21,24 @@ function useInterval(fn,delay){
 }
 const Request = ()=>{
   let [data , setData] = useState(0);
-  useEffect(()=>{
-    fetch("https://nitinr-cors.herokuapp.com/https://api.wazirx.com/api/v2/tickers/maticinr",{
-    })
-    .then(res=>res.json())
-    .then(data=>{
-      console.log(data.ticker.last)
-      setData(data.ticker.last) 
-    })
-  },[])
-  const delay = 5000;
+  // const config = {
+  //   headers: {
+  //     "Access-Control-Allow-Origin": "*",
+  //     "Access-Control-Allow-Methods": "GET"
+  //   }
+  // };
+
+  const delay = 2000;
   useInterval(()=>{
-    fetch("https://nitinr-cors.herokuapp.com/https://api.wazirx.com/api/v2/tickers/maticinr",{
-    })
-    .then(res=>res.json())
-    .then(data=>{
-      console.log(data.ticker.last)
-      setData(data.ticker.last) 
-    })
+    axios.get("https://api.wazirx.com/api/v2/tickers/maticinr/").then(data=>{
+      console.log("data",data)
+      setData(data.data.ticker.last) 
+    }).catch(e=>console.log("e",e))
+
   },[delay])
 
   return data
 }
-// useEffect(() => {
-//   async function getDogecoinPrice() {
-//     const { data } = await axios.get(
-//       'https://nitinr-cors.herokuapp.com/https://api.wazirx.com/api/v2/tickers/dogeusdt'
-//     );
-//     setTicker(data.ticker);
-//   }
-//   getDogecoinPrice();
-//   setInterval(() => getDogecoinPrice(), 10000);
-// }, []);
 
 const Header = ({ showNav, siteTitle, scrolled, navMenuItems = [], textWhite = true }) => {
 
