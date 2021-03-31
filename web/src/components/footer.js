@@ -18,7 +18,7 @@ const Footer = ({ siteTitle }) => (
           <p className="uppercase text-gray-500 md:mb-6">Quick Links</p>
           <ul className="list-reset mb-6">
             <li className="mt-2 inline-block mr-2 md:block md:mr-0">
-              <a href="https://matic.network/dapps/" target="_blank">
+              <a href="https://awesomepolygon.com/" target="_blank">
                 <span className="hover:underline text-gray-800 hover:text-orange-500">
                   DApps
                 </span>
