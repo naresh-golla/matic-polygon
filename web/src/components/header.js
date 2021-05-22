@@ -21,19 +21,19 @@ function useInterval(fn,delay){
 }
 const Request = ()=>{
   let [data , setData] = useState(0);
-  // const config = {
-  //   headers: {
-  //     "Access-Control-Allow-Origin": "*",
-  //     "Access-Control-Allow-Methods": "GET"
-  //   }
-  // };
+  const config = {
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET"
+    }
+  };
 
   const delay = 2000;
   useInterval(()=>{
-    axios.get("https://api.wazirx.com/api/v2/tickers/maticinr/").then(data=>{
+    axios.get("https://api.wazirx.com/api/v2/tickers/maticinr/",config).then(data=>{
       console.log("data",data)
       setData(data.data.ticker.last) 
-    }).catch(e=>console.log("e",e))
+    }).catch(e=>console.log("error-->>",e))
 
   },[delay])
 
@@ -62,7 +62,7 @@ const Header = ({ showNav, siteTitle, scrolled, navMenuItems = [], textWhite = t
         <div className="pl-4 flex items-center">
           <Link id="siteTitle" className={titleClass} to="/">
             <div style={{display:"flex",alignItems:"center"}}>
-            <img src="https://cdn.sanity.io/images/pbft8nsp/production/df94f40876875ad59ce6672508d6d7fdf70327d8-38x34.svg" height="60" width="60"/>
+            <img src="https://cdn.sanity.io/images/p5x63gx2/production/df94f40876875ad59ce6672508d6d7fdf70327d8-38x34.svg" height="60" width="60"/>
             <span>{siteTitle}</span>
             </div>
           </Link>
